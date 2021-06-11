@@ -27,6 +27,15 @@ const formSchema = Yup.object().shape({
   password: Yup.string().required().min(6),
 });
 
+// const validateUser = (data) => {
+//   const user = useSelector((state) => state.user.userDetails);
+//   if (user.email === data.email && user.password === data.password) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
+
 const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),

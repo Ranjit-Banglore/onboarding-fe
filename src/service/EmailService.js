@@ -2,7 +2,7 @@ import { Button, Input, TextField } from "@material-ui/core";
 import React from "react";
 import emailjs from "emailjs-com";
 
-function sendEmail(e) {
+export function sendEmail(e) {
   e.preventDefault();
   const code = Math.floor(Math.random() * 10000);
   console.log(JSON.stringify(e.target.name));

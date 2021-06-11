@@ -103,11 +103,6 @@ const Signup = () => {
       >
         {({
           handleSubmit,
-          // handleChange,
-          // handleBlur,
-          // values,
-          // errors,
-          // touched,
         }) => {
           return (
             <Container component="main" maxWidth="xs" spacing={3}>
