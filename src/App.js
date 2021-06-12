@@ -1,12 +1,6 @@
 import React from "react";
 import "./App.css";
-import {
-  BrowserRouter,
-  Redirect,
-  Route,
-  Switch,
-  useLocation,
-} from "react-router-dom";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import Signup from "./home/Signup";
 import Login from "./home/Login";
 import OnboardingStep1 from "./onboarding/OnboardingStep1";
@@ -45,59 +39,54 @@ function App() {
   console.log(user);
 
   return (
-    <div>
-      <BrowserRouter>
-        <div className="App">
-          <div className="content"></div>
-          <AnimatePresence exitBeforeEnter>
-            <Switch>
-              {/* <Route path="/" component={Login} exact></Route> */}
-              {/* <AuthRoute
+    <BrowserRouter>
+      <div className="App">
+        <div className="content"></div>
+        <AnimatePresence exitBeforeEnter>
+          <Switch>
+            {/* <Route path="/" component={Login} exact></Route> */}
+            {/* <AuthRoute
                 exact
                 path="/"
                 component={Dashboard}
                 isAuthenticated={user.isAuthenticated}
               ></AuthRoute> */}
-              <Route exact path="/" component={Login}></Route>
-              <Route path="/home" component={Dashboard}></Route>
-              <Route path="/email" component={EmailService}></Route>
-              <Route path="/signup" component={Signup}></Route>
-              <Route
-                path="/onboarding-step-1"
-                component={OnboardingStep1}
-              ></Route>
-              <Route
-                path="/onboarding-step-2"
-                component={OnboardingStep2}
-              ></Route>
-              <Route
-                path="/onboarding-step-3"
-                component={OnboardingStep3}
-              ></Route>
-              <Route
-                path="/onboarding-step-4"
-                component={OnboardingStep4}
-              ></Route>
-              <Route
-                path="/onboarding-step-5"
-                component={OnboardingStep5}
-              ></Route>
-              <Route
-                path="/onboarding-step-6"
-                component={OnboardingStep6}
-              ></Route>
-              <Route
-                path="/onboarding-step-7"
-                component={OnboardingStep7}
-              ></Route>
-            </Switch>
-          </AnimatePresence>
-        </div>
-        {/* <Box mt={5}>
-          <Copyright />
-        </Box> */}
-      </BrowserRouter>
-    </div>
+            <Route exact path="/" component={Login}></Route>
+            <Route path="/home" component={Dashboard}></Route>
+            <Route path="/email" component={EmailService}></Route>
+            <Route path="/signup" component={Signup}></Route>
+            <Route
+              path="/onboarding-step-1"
+              component={OnboardingStep1}
+            ></Route>
+            <Route
+              path="/onboarding-step-2"
+              component={OnboardingStep2}
+            ></Route>
+            <Route
+              path="/onboarding-step-3"
+              component={OnboardingStep3}
+            ></Route>
+            <Route
+              path="/onboarding-step-4"
+              component={OnboardingStep4}
+            ></Route>
+            <Route
+              path="/onboarding-step-5"
+              component={OnboardingStep5}
+            ></Route>
+            <Route
+              path="/onboarding-step-6"
+              component={OnboardingStep6}
+            ></Route>
+            <Route
+              path="/onboarding-step-7"
+              component={OnboardingStep7}
+            ></Route>
+          </Switch>
+        </AnimatePresence>
+      </div>
+    </BrowserRouter>
   );
 }
 
