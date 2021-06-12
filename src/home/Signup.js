@@ -80,7 +80,7 @@ const Signup = () => {
         validationSchema={formSchema}
         onSubmit={(data) => {
           data = { ...data, code: Math.floor(Math.random() * 10000) };
-          //sendEmail(data);
+          sendEmail(data);
           signupPost(data);
           dispatch(setUser(data));
           console.log(data);
