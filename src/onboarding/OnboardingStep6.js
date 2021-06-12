@@ -76,7 +76,7 @@ export default function OnboardingStep2() {
             variant="contained"
             className={classes.button}
             onClick={() => {
-              history.push("/onborading-step-7");
+              history.push("/home");
             }}
           >
             <Typography variant="h4">Add a invoice</Typography>
@@ -84,10 +84,17 @@ export default function OnboardingStep2() {
         </div>
         <Divider className={classes.divider}></Divider>
         <Grid>
-          <Grid item spacing={5}>
-            <Link href="/home" variant="subtitle1">
-              No thanks, later!
-            </Link>
+          <Grid item>
+            <Button
+              size="medium"
+              color="primary"
+              variant="outlined"
+              onClick={() => {
+                history.push("/home");
+              }}
+            >
+              <Typography variant="h6"> No thanks, later!</Typography>
+            </Button>
           </Grid>
         </Grid>
       </Container>

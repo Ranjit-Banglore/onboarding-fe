@@ -77,7 +77,7 @@ const OnboardingStep1 = () => {
               inputProps={{ maxLength: 5 }}
               align="center"
               name="activationCode"
-              size="large"
+              size="medium"
               variant="standard"
               value={input}
               onChange={(e) => {

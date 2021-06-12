@@ -86,6 +86,7 @@ export default function OnboardingStep7() {
           </Grid>
         </Grid>
         <Grid item>
+        history.push("/onboarding-step-6");
           <Link href="/home" variant="subtitle1">
             No thanks, later!
           </Link>
