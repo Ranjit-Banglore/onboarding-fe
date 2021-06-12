@@ -1,7 +1,10 @@
 const baseUrl = "https://onboarding-be.herokuapp.com/onboarding/v1/signup";
 
-export default function signupPost(data, path) {
-  fetch(baseUrl + path, {
+export default function signupPost(inputData, path) {
+  let postData = {};
+  postData.email = inputData.email;
+  postData.password = inputData.password;
+  fetch(baseUrl, {
     method: "POST", // or 'PUT'
     mode: "cors",
     supportHeaderParams: true,
@@ -10,7 +13,7 @@ export default function signupPost(data, path) {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify(postData),
   })
     .then((response) => response.json())
     .then((data) => {
