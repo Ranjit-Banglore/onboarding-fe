@@ -22,6 +22,7 @@ import Copyright from "./Copyright";
 import { motion } from "framer-motion";
 import { pageVariantsX, pageTransition } from "./transitionStyle";
 import emailjs from "emailjs-com";
+import  sendEmail  from "../service/EmailService.js";
 
 const formSchema = Yup.object().shape({
   email: Yup.string().required().email(),
@@ -79,31 +80,13 @@ const Signup = () => {
         validationSchema={formSchema}
         onSubmit={(data) => {
           data = { ...data, code: Math.floor(Math.random() * 10000) };
+          sendEmail(data);
           dispatch(setUser(data));
           console.log(data);
           history.push("/onboarding-step-1");
-          // emailjs
-          //   .send(
-          //     "service_l73aj3n",
-          //     "template_6sboo1f",
-          //     data,
-          //     "user_sVYHHnz58nCpik74KnF7l"
-          //   )
-          //   .then(
-          //     (result) => {
-          //       console.log(result.text);
-          //       dispatch(setUser(data));
-          //       history.push("/onboarding-step-1");
-          //     },
-          //     (error) => {
-          //       console.log(error.text);
-          //     }
-          //   );
         }}
       >
-        {({
-          handleSubmit,
-        }) => {
+        {({ handleSubmit }) => {
           return (
             <Container component="main" maxWidth="xs" spacing={3}>
               <CssBaseline />
