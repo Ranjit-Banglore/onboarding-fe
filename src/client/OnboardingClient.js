@@ -1,22 +1,14 @@
-export function PostRequest(url, data) {
-  fetch(url, {
-    method: "POST", // or 'PUT'
-    mode: "cors",
-    supportHeaderParams: true,
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*",
-    },
-    body: JSON.stringify(data),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      //
-      history.push("/step_1/" + data.name);
-      console.log("Success:", data);
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+import axios from "axios";
+
+const baseUrl = "https://onboarding-be.herokuapp.com/onboarding/v1/signup";
+
+export default function signupPost(inputData) {
+  let postData = {};
+  postData.email = inputData.email;
+  postData.password = inputData.password;
+  axios({
+    method: "post",
+    url: baseUrl,
+    data: postData,
+  });
 }
