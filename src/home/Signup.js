@@ -21,8 +21,8 @@ import SignupHeader from "./SignupHeader";
 import Copyright from "./Copyright";
 import { motion } from "framer-motion";
 import { pageVariantsX, pageTransition } from "./transitionStyle";
-import emailjs from "emailjs-com";
-import  sendEmail  from "../service/EmailService.js";
+import sendEmail from "../service/EmailService.js";
+import signupPost from "../client/OnboardingClient.js";
 
 const formSchema = Yup.object().shape({
   email: Yup.string().required().email(),
@@ -80,7 +80,8 @@ const Signup = () => {
         validationSchema={formSchema}
         onSubmit={(data) => {
           data = { ...data, code: Math.floor(Math.random() * 10000) };
-          sendEmail(data);
+          //sendEmail(data);
+          signupPost(data);
           dispatch(setUser(data));
           console.log(data);
           history.push("/onboarding-step-1");

@@ -1,5 +1,7 @@
-export function PostRequest(url, data) {
-  fetch(url, {
+const baseUrl = "https://onboarding-be.herokuapp.com/onboarding/v1/signup";
+
+export default function signupPost(data, path) {
+  fetch(baseUrl + path, {
     method: "POST", // or 'PUT'
     mode: "cors",
     supportHeaderParams: true,
@@ -12,9 +14,7 @@ export function PostRequest(url, data) {
   })
     .then((response) => response.json())
     .then((data) => {
-      //
-      history.push("/step_1/" + data.name);
-      console.log("Success:", data);
+      console.log("data:", data);
     })
     .catch((error) => {
       console.error("Error:", error);
